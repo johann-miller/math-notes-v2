@@ -11,8 +11,7 @@
 	}
 </style>
 
-<Nav />
-
+<Nav/>
 <main>
 	<slot></slot>
 </main>
