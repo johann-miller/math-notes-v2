@@ -13,26 +13,42 @@
 </script>
 
 <style>
-    .default-links {
-        border-bottom: 2px #d6d9dc solid;
-        display: flex;
-        flex-flow: column;
-        padding-bottom: 0.5rem;
-    }
-
     nav {
         border-right: 1px #d6d9dc solid;
         height: 100vh;
         left: 0;
-        padding: 1rem;
         position: fixed;
         top: 0;
-        width: 18rem;
+        width: 16rem;
 
     }
 
     ul {
         list-style-type: none;
+    }
+
+    .arrow {
+        filter: invert(20%) sepia(7%) saturate(259%) hue-rotate(2deg) brightness(100%) contrast(85%);
+        transition: 0.1s transform ease-in-out;
+        height: 1.5rem;
+        width: auto;
+    }
+
+    .default-links {
+        border-bottom: 3px #d6d9dc solid;
+        display: flex;
+        flex-flow: column;
+        padding-bottom: 0.5rem;
+        margin: 1rem;
+    }
+
+    .subject-button {
+        align-items: center;
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        width: 100%;
     }
 </style>
 
@@ -41,5 +57,16 @@
         <li>
             <a href="/">Home</a>
         </li>
+    </ul>
+    <ul>
+        {#each subjects as subject}
+            <li class="subject">
+                <button class="subject-button">
+                    {subject.title}
+                    <img src="images/arrow-right.svg" alt="arrow-right" class="arrow">
+                </button>
+                
+            </li>
+        {/each}
     </ul>
 </nav>
