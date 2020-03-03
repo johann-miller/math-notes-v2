@@ -13,17 +13,22 @@
 </script>
 
 <style>
-    .links {
+    .default-links {
+        border-bottom: 2px #d6d9dc solid;
         display: flex;
-    }
-
-    .links li:not(:first-child) {
-        margin-left: 1rem;
+        flex-flow: column;
+        padding-bottom: 0.5rem;
     }
 
     nav {
-        padding: 0.75rem;
         border-right: 1px #d6d9dc solid;
+        height: 100vh;
+        left: 0;
+        padding: 1rem;
+        position: fixed;
+        top: 0;
+        width: 18rem;
+
     }
 
     ul {
@@ -32,12 +37,9 @@
 </style>
 
 <nav>
-    <ul class="links">
+    <ul class="default-links">
         <li>
             <a href="/">Home</a>
-        </li>
-        <li>
-            <a href="/">About</a>
         </li>
     </ul>
 </nav>
