@@ -25,8 +25,11 @@
     }
 
     .section {
-        font-weight: 300;
         padding: 0.25rem 0 0.25rem 0.75rem;
+    }
+
+    .section a {
+        font-weight: 300;
     }
 
     .subject-button {
@@ -51,7 +54,9 @@
                     {chapter.title}
                     <ul>
                         {#each chapter.sections as section}
-                            <li class="section">{section.title}</li>
+                            <li class="section">
+                                <a href="/posts/{section.postID}">{section.title}</a>
+                            </li>
                         {/each}
                     </ul>
                 </li>

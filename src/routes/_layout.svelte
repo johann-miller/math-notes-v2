@@ -6,7 +6,7 @@
 	.container {
 		display: grid;
 		grid-template-rows: 100vh;
-		grid-template-columns: 16rem calc(100vw - 16rem);
+		grid-template-columns: 15rem calc(100vw - 15rem);
 	}
 
 	main {
@@ -14,7 +14,8 @@
 		flex-flow: column;
 		align-items: center;
 		width: 100%;
-		min-height: 100%;
+		height: 100%;
+		overflow-y: scroll;
 	}
 </style>
 

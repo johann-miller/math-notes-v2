@@ -11,12 +11,37 @@
 	<link rel='manifest' href='manifest.json' crossorigin='use-credentials'>
 	<link rel='icon' type='image/png' href='favicon.png'>
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400&display=swap" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
 
 	%sapper.styles%
 
 	%sapper.head%
 </head>
 <body>
+	<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+
+	<script>
+		const firebaseConfig = {
+			apiKey: "AIzaSyCVIY_2wI_r5V13RHRAnX70G5lVkg5TApM",
+			authDomain: "mathblog-v2.firebaseapp.com",
+			databaseURL: "https://mathblog-v2.firebaseio.com",
+			projectId: "mathblog-v2",
+			storageBucket: "mathblog-v2.appspot.com",
+			messagingSenderId: "822953513455",
+			appId: "1:822953513455:web:6276f37e4d04e3d7ba261a"
+		}
+
+		firebase.initializeApp(firebaseConfig)
+	</script>
+
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			extensions: ["tex2jax.js", "TeX/AMSmath.js"],
+			jax: ["input/TeX", "output/SVG"],
+		})
+	</script>
+	
 	<div id='sapper'>%sapper.html%</div>
 
 	%sapper.scripts%

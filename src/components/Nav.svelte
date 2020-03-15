@@ -8,25 +8,25 @@
                 {
                     title: "Chapter 1",
                     sections: [
-                        {title: "section 1"},
-                        {title: "section 2"},
-                        {title: "section 3"},
+                        {title: "Section 1", postID: "aZdNJyvwLRziWCy8iXgW"},
+                        {title: "Section 2", postID: "aZdNJyvwLRziWCy8iXgW"},
+                        {title: "Section 3", postID: "aZdNJyvwLRziWCy8iXgW"},
                     ]
                 },
                 {
                     title: "Chapter 2",
                     sections: [
-                        {title: "section 1"},
-                        {title: "section 2"},
-                        {title: "section 3"},
+                        {title: "Section 1", postID: "aZdNJyvwLRziWCy8iXgW"},
+                        {title: "Section 2", postID: "aZdNJyvwLRziWCy8iXgW"},
+                        {title: "Section 3", postID: "aZdNJyvwLRziWCy8iXgW"},
                     ]
                 },
                 {
                     title: "Chapter 3",
                     sections: [
-                        {title: "section 1"},
-                        {title: "section 2"},
-                        {title: "section 3"},
+                        {title: "Section 1", postID: "aZdNJyvwLRziWCy8iXgW"},
+                        {title: "Section 2", postID: "aZdNJyvwLRziWCy8iXgW"},
+                        {title: "Section 3", postID: "aZdNJyvwLRziWCy8iXgW"},
                     ]
                 },
             ]
@@ -96,7 +96,7 @@
     nav {
         border-right: 1px #d6d9dc solid;
         height: 100%;
-        width: 16rem;
+        width: 100%;
 
     }
 
@@ -115,6 +115,7 @@
     .menu {
         background: #fcfcfc;
         border: none;
+        display: none;
         left: 16.5rem;
         opacity: 0.5;
         padding: 0.5rem;
