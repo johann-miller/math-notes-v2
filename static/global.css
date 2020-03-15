@@ -72,3 +72,8 @@ input {
 article p {
 	margin: 1.5rem 0;
 }
+
+ol, ul {
+	list-style-position: inside;
+	list-style-type: none;
+}

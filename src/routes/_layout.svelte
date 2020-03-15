@@ -3,16 +3,24 @@
 </script>
 
 <style>
+	.container {
+		display: grid;
+		grid-template-rows: 100vh;
+		grid-template-columns: 16rem calc(100vw - 16rem);
+	}
+
 	main {
 		display: flex;
 		flex-flow: column;
 		align-items: center;
-		width: 100vw;
-		min-height: 100vh;
+		width: 100%;
+		min-height: 100%;
 	}
 </style>
 
-<Nav/>
-<main>
-	<slot></slot>
-</main>
+<div class="container">
+	<Nav/>
+	<main>
+		<slot></slot>
+	</main>
+</div>
