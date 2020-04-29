@@ -1,19 +1,20 @@
 <script>
     import { stores } from "@sapper/app"
     import { onMount, afterUpdate } from 'svelte'
+    import Post from '../../components/Post.svelte'
 
-    const { page } = stores()
-    const { slug } = $page.params
+    let { page } = stores()
+    let params = $page.params
     let post
 
+    page.subscribe(value => {
+        params = value.params
+        updatePost(params.slug)
+    })
+
     onMount(() => {
-        let db = firebase.firestore()
-        const postRef = db.collection('posts').doc(slug)
-        postRef.get().then(function(doc) {
-            if(doc.exists) {
-                post = doc.data()
-            }
-        })
+        console.log(params.slug)
+        updatePost(params.slug)
     })
 
     // Rerender any math after the post content has been updated
@@ -37,6 +38,16 @@
             window.MathJax.Hub.Queue(["Typeset", window.MathJax.Hub, "post"]);
         }
     })
+
+    function updatePost(postID) {
+        let db = firebase.firestore()
+        const postRef = db.collection('posts').doc(postID)
+        postRef.get().then(function(doc) {
+            if(doc.exists) {
+                post = doc.data()
+            }
+        })
+    }
 
     function date(timestamp) {
         let date = new Date(timestamp * 1000);

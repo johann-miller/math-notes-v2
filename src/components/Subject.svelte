@@ -15,9 +15,17 @@
         width: auto;
     }
 
-    .chapter {
+    .chapter:not(:last-child) {
+        border-bottom: 1px #d6d9dc solid;
+    }
+
+    .chapter:not(:first-child) .chapter-title {
+        padding-top: 0.5rem;
+    }
+
+    .chapters {
         background: #f0f0f0;
-        padding-left: 1rem;
+        padding: 0.5rem 1rem 0.5rem 1rem;
     }
 
     .expanded-arrow {
@@ -25,7 +33,8 @@
     }
 
     .section {
-        padding: 0.25rem 0 0.25rem 0.75rem;
+        
+        padding: 0.25rem 0 0.25rem 0.25rem;
     }
 
     .section a {
@@ -48,10 +57,10 @@
         <img src="images/arrow-right.svg" alt="arrow-right" class="arrow" class:expanded-arrow={expanded}>
     </button>
     {#if expanded}
-        <ul>
+        <ul class="chapters">
             {#each subject.chapters as chapter}
                 <li class="chapter">
-                    {chapter.title}
+                    <div class="chapter-title">{chapter.title}</div>
                     <ul>
                         {#each chapter.sections as section}
                             <li class="section">

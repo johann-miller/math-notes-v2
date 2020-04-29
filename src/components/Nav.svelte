@@ -9,7 +9,7 @@
                     title: "Chapter 1",
                     sections: [
                         {title: "Section 1", postID: "aZdNJyvwLRziWCy8iXgW"},
-                        {title: "Section 2", postID: "aZdNJyvwLRziWCy8iXgW"},
+                        {title: "Section 2", postID: "VbVuC3eDHSt6ngWPfDje"},
                         {title: "Section 3", postID: "aZdNJyvwLRziWCy8iXgW"},
                     ]
                 },
@@ -97,6 +97,8 @@
         border-right: 1px #d6d9dc solid;
         height: 100%;
         width: 100%;
+        max-height: 100vh;
+        overflow-y: scroll;
 
     }
 

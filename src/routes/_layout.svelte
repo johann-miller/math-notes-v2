@@ -7,6 +7,7 @@
 		display: grid;
 		grid-template-rows: 100vh;
 		grid-template-columns: 15rem calc(100vw - 15rem);
+		overflow-x: hidden;
 	}
 
 	main {
