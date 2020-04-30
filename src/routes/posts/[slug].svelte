@@ -1,7 +1,6 @@
 <script>
   import { stores } from "@sapper/app";
   import { onMount, afterUpdate } from "svelte";
-  import Post from "../../components/Post.svelte";
 
   let { page } = stores();
   let params = $page.params;
@@ -32,7 +31,7 @@
       });
     }
 
-    updatePost(params.slug);
+    updatePost(params.slug)
   });
 
   function renderArticle() {
@@ -40,14 +39,19 @@
       document.getElementById("output").innerHTML = post.body;
 
       if (window.MathJax) {
-        window.MathJax.Hub.Queue(["Typeset", window.MathJax.Hub, "output"]);
+        window.MathJax.Hub.Queue(["Typeset", window.MathJax.Hub, "output"])
       }
     }
   }
 
   function updatePost(postID) {
+    if (!postID) {
+      return
+    }
+
     let db = firebase.firestore();
     const postRef = db.collection("posts").doc(postID);
+
     postRef.get().then(function(doc) {
       if (doc.exists) {
         post = doc.data();

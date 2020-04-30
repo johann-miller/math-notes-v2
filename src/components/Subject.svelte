@@ -64,7 +64,7 @@
                     <ul>
                         {#each chapter.sections as section}
                             <li class="section">
-                                <a href="/posts/{section.postID}">{section.title}</a>
+                                <a href="/posts/{section.post}">{section.title}</a>
                             </li>
                         {/each}
                     </ul>

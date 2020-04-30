@@ -1,95 +1,24 @@
 <script>
+    import {onMount} from 'svelte'
     import Subject from "./Subject.svelte"
 
-    let subjects = [
-        {
-            title: "Subject 1",
-            chapters: [
-                {
-                    title: "Chapter 1",
-                    sections: [
-                        {title: "Section 1", postID: "aZdNJyvwLRziWCy8iXgW"},
-                        {title: "Section 2", postID: "VbVuC3eDHSt6ngWPfDje"},
-                        {title: "Section 3", postID: "aZdNJyvwLRziWCy8iXgW"},
-                    ]
-                },
-                {
-                    title: "Chapter 2",
-                    sections: [
-                        {title: "Section 1", postID: "aZdNJyvwLRziWCy8iXgW"},
-                        {title: "Section 2", postID: "aZdNJyvwLRziWCy8iXgW"},
-                        {title: "Section 3", postID: "aZdNJyvwLRziWCy8iXgW"},
-                    ]
-                },
-                {
-                    title: "Chapter 3",
-                    sections: [
-                        {title: "Section 1", postID: "aZdNJyvwLRziWCy8iXgW"},
-                        {title: "Section 2", postID: "aZdNJyvwLRziWCy8iXgW"},
-                        {title: "Section 3", postID: "aZdNJyvwLRziWCy8iXgW"},
-                    ]
-                },
-            ]
-        },
-        {
-            title: "Subject 2",
-            chapters: [
-                {
-                    title: "Chapter 1",
-                    sections: [
-                        {title: "section 1"},
-                        {title: "section 2"},
-                        {title: "section 3"},
-                    ]
-                },
-                {
-                    title: "Chapter 2",
-                    sections: [
-                        {title: "section 1"},
-                        {title: "section 2"},
-                        {title: "section 3"},
-                    ]
-                },
-                {
-                    title: "Chapter 3",
-                    sections: [
-                        {title: "section 1"},
-                        {title: "section 2"},
-                        {title: "section 3"},
-                    ]
-                },
-            ]
-        },
-        {
-            title: "Subject 3",
-            chapters: [
-                {
-                    title: "Chapter 1",
-                    sections: [
-                        {title: "section 1"},
-                        {title: "section 2"},
-                        {title: "section 3"},
-                    ]
-                },
-                {
-                    title: "Chapter 2",
-                    sections: [
-                        {title: "section 1"},
-                        {title: "section 2"},
-                        {title: "section 3"},
-                    ]
-                },
-                {
-                    title: "Chapter 3",
-                    sections: [
-                        {title: "section 1"},
-                        {title: "section 2"},
-                        {title: "section 3"},
-                    ]
-                },
-            ]
-        },
-    ]
+    let subjects = []
+
+    onMount(() => {
+        let db = firebase.firestore()
+
+        db.collection("subjects").get().then((querySnapshot) => {
+            subjects = []
+
+            querySnapshot.forEach((doc) => {
+                let subject = doc.data()
+                subjects.push(subject)
+            })
+
+            subjects.sort()
+            subjects = subjects
+        })
+    })
 </script>
 
 <style>
