@@ -88,7 +88,7 @@
     width: 100%;
     max-width: 50rem;
     margin-bottom: 5rem;
-    padding: 0 1rem 5rem 0;
+    padding: 1rem 1rem 5rem 1rem;
   }
 
   header {
@@ -125,6 +125,12 @@
   .video-container-limiter {
     width: 100%;
     max-width: 80rem;
+  }
+
+  @media only screen and (min-width: 450px) {
+    article {
+      padding: 1rem 3rem 5rem 3rem;
+    }
   }
 </style>
 
